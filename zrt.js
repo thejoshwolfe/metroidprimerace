@@ -4,8 +4,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
   var mood_music_audio = new Audio("wrong-game.mp3");
   mood_music_audio.loop = true;
   var huzzah_audio = [
-    new Audio("diddywins.ogg"),
-    new Audio("dixiewins.ogg"),
+    new Audio("fans.mp3"),
   ];
   var requestAnimationFrame = window.requestAnimationFrame;
 
@@ -22,14 +21,19 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
         profile_img: "img/faces/kyle.png",
       },
       {
+        name: "Andy",
+        times: [],
+        profile_img: "img/faces/andy.png",
+      },
+      {
         name: "Lukas",
         times: [],
         profile_img: "http://media.steampowered.com/steamcommunity/public/images/avatars/22/22810a6ecd7c4532209c4606ae0b9d95bc5898db_full.jpg",
       },
       {
-        name: "Sam",
+        name: "James",
         times: [],
-        profile_img: "img/faces/sam.png",
+        profile_img: "img/faces/james.png",
       },
     ],
     gameState: 'setup',
@@ -134,7 +138,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
       $scope.state.current_checkpoint += 1;
     }
     saveState();
-    var audio = huzzah_audio[Math.floor(Math.random() * 2)];
+    var audio = huzzah_audio[Math.floor(Math.random() * huzzah_audio.length)];
     audio.play();
   };
 
