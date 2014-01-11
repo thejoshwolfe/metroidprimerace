@@ -1,7 +1,7 @@
 
 window.APP = window.angular.module('main', []).controller('MainCtrl', function($scope) {
   var happyFunTimeAudio = new Audio("mario-kart.ogg");
-  var mood_music_audio = new Audio("wrong-game.ogg");
+  var mood_music_audio = new Audio("wrong-game.mp3");
   mood_music_audio.loop = true;
   var huzzah_audio = [
     new Audio("diddywins.ogg"),
@@ -35,28 +35,32 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
     gameState: 'setup',
     checkpoints: [
       {
-        name: "Gangplank Galleon",
-        img_src: "img/krow.png",
+        name: "Iggy",
+        img_src: "img/checkpoints/iggy.png",
       },
       {
-        name: "Crocodile Cauldron",
-        img_src: "img/kleaver.png",
+        name: "Morton",
+        img_src: "img/checkpoints/morton.png",
       },
       {
-        name: "Krem Quay",
-        img_src: "img/kudgel.png",
+        name: "Lemmy",
+        img_src: "img/checkpoints/lemmy.png",
       },
       {
-        name: "Krazy Kremland",
-        img_src: "img/kingzing.png",
+        name: "Ludwig",
+        img_src: "img/checkpoints/ludwig.png",
       },
       {
-        name: "Gloomy Gulch",
-        img_src: "img/kreepykrow.png",
+        name: "Roy",
+        img_src: "img/checkpoints/roy.png",
       },
       {
-        name: "K. Rool",
-        img_src: "img/krool.png",
+        name: "Wendy",
+        img_src: "img/checkpoints/wendy.png",
+      },
+      {
+        name: "Bowser",
+        img_src: "img/checkpoints/bowser.png",
       },
     ],
     current_checkpoint: 0,
@@ -384,9 +388,8 @@ window.APP.directive('rupeeDisplay', function() {
       elem[0].innerHTML = "";
 
       var units = [
-        {name: "blue", value: 3},
-        {name: "green", value: 2},
-        {name: "red", value: 1},
+        {name: "moon", value: 3},
+        {name: "1up", value: 1},
       ];
 
       for (var i = 0; i < units.length; i++) {
@@ -395,9 +398,9 @@ window.APP.directive('rupeeDisplay', function() {
         makeImgs(number, units[i].name);
       }
 
-      function makeImgs(count, color_name) {
+      function makeImgs(count, img_name) {
         for (var i = 0; i < count; i++) {
-          elem.append('<img src="img/balloon-' + color_name + '.gif">');
+          elem.append('<img src="img/' + img_name + '.png">');
         }
       }
     }
