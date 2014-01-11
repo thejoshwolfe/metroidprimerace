@@ -185,7 +185,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
     return rupees;
   };
 
-  loadState(localStorage.dkc2race);
+  loadState(localStorage.marioworldrace);
 
   requestAnimationFrame(function animateClock() {
     var clock = document.getElementById("clock");
@@ -300,7 +300,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
 
   function saveState() {
     sortPeople();
-    localStorage.dkc2race = window.angular.toJson($scope.state);
+    localStorage.marioworldrace = window.angular.toJson($scope.state);
     playPauseMusic();
   }
 
@@ -321,7 +321,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
 
   $scope.resetState = function() {
     if (confirm("delete all 50 states?")) {
-      delete localStorage.dkc2race;
+      delete localStorage.marioworldrace;
       location.href = location.href;
     }
   };
@@ -329,9 +329,9 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
   function currentTitle() {
     if ($scope.state.gameState === "race") {
       var checkpoint = $scope.currentCheckpoint();
-      if (checkpoint) return checkpoint.name + " - DKC2 Race - ";
+      if (checkpoint) return checkpoint.name + " - Mario World Race - ";
     }
-    return "DKC2 Race - ";
+    return "Mario World Race - ";
   }
 
   var marqueeIndex = 0;
